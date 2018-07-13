@@ -1,5 +1,4 @@
-# hello-world
-## 自建梯子：
+# 自建梯子：
 1.vultr购买服务器 https://www.vultr.com/?ref=7303716
 2.Debian 7 x64
 3.xshell 远程连接到服务器
