@@ -1,13 +1,13 @@
 # 自建梯子：
 
 
-## 1.vultr购买服务器 https://www.vultr.com/?ref=7303716
-## 2.建议购买/Debian 7 x64/centOs/unbutu
-## 3.xshell 远程连接到服务器/ssh
+1. vultr购买服务器 https://www.vultr.com/?ref=7303716  
+2. 建议购买/Debian 7 x64/centOs/unbutu  
+3. xshell 远程连接到服务器/ssh  
 ***
-## 4.安装wget(Web Get)
-apt-get install wget    | yum -y install wget
-## 5.拷贝安装一键管理脚本
+4.安装wget(Web Get)  
+apt-get install wget | yum -y install wget  
+5.拷贝安装一键管理脚本  
 wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 OR
 wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
