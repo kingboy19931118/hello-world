@@ -1,6 +1,9 @@
 package com.arbor.note.juc.countdownlatch;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 同步工具类 countDownList
@@ -16,16 +19,30 @@ public class CountDownLatchDemo {
         System.out.println("--------------begin----------------");
         driver.main();
         System.out.println("---------------end-----------------");
+//        driver = null;
+//        System.gc();
     }
 
     static class Driver {
+//        BlockingQueue queue = new ArrayBlockingQueue(200);
+//        ThreadFactory threadFactory = new ThreadPoolExecutorFactoryBean();
+//        ThreadPoolExecutor executor = new ThreadPoolExecutor(20, 100, 3600, TimeUnit.SECONDS, queue, threadFactory);
+
+        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 2);
+
+        {
+            executor.setKeepAliveTime(10, TimeUnit.SECONDS);
+            executor.allowCoreThreadTimeOut(true);
+        }
+
         void main() throws InterruptedException {
             CountDownLatch startSignal = new CountDownLatch(1);
             CountDownLatch doneSignal = new CountDownLatch(5);
 
             // create and start threads
             for (int i = 0; i < 5; ++i) {
-                new Thread(new Worker(startSignal, doneSignal)).start();
+                executor.execute(new Worker(startSignal, doneSignal));
+//                new Thread(new Worker(startSignal, doneSignal)).start();
             }
 
             // don't let run yet
@@ -62,9 +79,10 @@ public class CountDownLatchDemo {
             try {
                 startSignal.await();
                 doWork();
-                doneSignal.countDown();
             } catch (InterruptedException ex) {
                 System.out.println("系统异常");
+            } finally {
+                doneSignal.countDown();
             }
         }
 
