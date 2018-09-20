@@ -1,9 +1,8 @@
 package com.arbor.note.juc.countdownlatch;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import org.springframework.scheduling.concurrent.ThreadPoolExecutorFactoryBean;
+
+import java.util.concurrent.*;
 
 /**
  * 同步工具类 countDownList
@@ -24,11 +23,11 @@ public class CountDownLatchDemo {
     }
 
     static class Driver {
-//        BlockingQueue queue = new ArrayBlockingQueue(200);
-//        ThreadFactory threadFactory = new ThreadPoolExecutorFactoryBean();
-//        ThreadPoolExecutor executor = new ThreadPoolExecutor(20, 100, 3600, TimeUnit.SECONDS, queue, threadFactory);
+        BlockingQueue<Runnable> queue = new ArrayBlockingQueue<>(50);
+        ThreadFactory threadFactory = new ThreadPoolExecutorFactoryBean();
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 20, 10, TimeUnit.SECONDS, queue, threadFactory);
 
-        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 2);
+//        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 2);
 
         {
             executor.setKeepAliveTime(10, TimeUnit.SECONDS);
