@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 初始化List Map大小  初始化大小指定尽量为集合大小/负载因子 比如总共有6条数据 则最佳初始化大小为 6/0.75=8
+ *
  * @author qiaomu.wang
  * @date 2018-09-18
  */
