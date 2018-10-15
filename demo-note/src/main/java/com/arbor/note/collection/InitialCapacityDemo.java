@@ -1,5 +1,6 @@
 package com.arbor.note.collection;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,5 +25,7 @@ public class InitialCapacityDemo {
         map.put("8", "a");
         System.out.println(map.size());
 
+        ArrayList<Integer> arrayList = new ArrayList<>(16);
+        System.out.println(arrayList.size());
     }
 }
