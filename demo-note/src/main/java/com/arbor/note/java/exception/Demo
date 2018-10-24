@@ -1,0 +1,62 @@
+C:\Users\kingb\Desktop>javap -c demo
+public class Demo {
+  public Demo();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: invokestatic  #2                  // Method testNPE:()V
+       3: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       6: ldc           #4                  // String finally
+       8: invokevirtual #5                  // Method java/io/PrintStream.print:(Ljava/lang/String;)V
+      11: return
+      12: astore_1
+      13: aload_1
+      14: invokevirtual #7                  // Method java/io/IOException.printStackTrace:()V
+      17: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      20: ldc           #4                  // String finally
+      22: invokevirtual #5                  // Method java/io/PrintStream.print:(Ljava/lang/String;)V
+      25: goto          71
+      28: astore_1
+      29: aload_1
+      30: invokevirtual #9                  // Method java/lang/NullPointerException.printStackTrace:()V
+      33: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      36: ldc           #4                  // String finally
+      38: invokevirtual #5                  // Method java/io/PrintStream.print:(Ljava/lang/String;)V
+      41: goto          71
+      44: astore_1
+      45: aload_1
+      46: invokevirtual #11                 // Method java/lang/Exception.printStackTrace:()V
+      49: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      52: ldc           #4                  // String finally
+      54: invokevirtual #5                  // Method java/io/PrintStream.print:(Ljava/lang/String;)V
+      57: goto          71
+      60: astore_2
+      61: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      64: ldc           #4                  // String finally
+      66: invokevirtual #5                  // Method java/io/PrintStream.print:(Ljava/lang/String;)V
+      69: aload_2
+      70: athrow
+      71: return
+    Exception table:
+       from    to  target type
+           0     3    12   Class java/io/IOException
+           0     3    28   Class java/lang/NullPointerException
+           0     3    44   Class java/lang/Exception
+           0     3    60   any
+          12    17    60   any
+          28    33    60   any
+          44    49    60   any
+
+  public static void testNPE() throws java.io.IOException;
+    Code:
+       0: aconst_null
+       1: astore_0
+       2: aload_0
+       3: invokevirtual #12                 // Method java/lang/String.toString:()Ljava/lang/String;
+       6: pop
+       7: return
+}

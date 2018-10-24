@@ -12,6 +12,7 @@
     <modules>
         <module>demo-web</module>
         <module>demo-service</module>
+        <module>demo-infra</module>
     </modules>
 
     <properties>
