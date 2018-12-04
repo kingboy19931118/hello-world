@@ -53,8 +53,9 @@ public class CountDownLatchDemo {
             doneSignal.await();
         }
 
-        private void doSomethingElse() {
-            System.out.println("等待");
+        private void doSomethingElse() throws InterruptedException {
+            System.out.println("等待3秒钟");
+            Thread.sleep(3_000L);
         }
 
     }

@@ -1,6 +1,7 @@
 package com.arbor.note.collection;
 
 import com.google.common.collect.Lists;
+import org.apache.commons.collections.CollectionUtils;
 
 import java.util.Comparator;
 import java.util.List;
@@ -16,6 +17,7 @@ public class SortDemo {
         stringListSort();
         intListSort();
 
+        sortDemo();
     }
 
     private static void stringListSort() {
@@ -30,12 +32,20 @@ public class SortDemo {
     }
 
     private static void intListSort() {
-        List<Integer> sortList = Lists.newArrayList(666, 222, 123, 1, 2 ,3);
+        List<Integer> sortList = Lists.newArrayList(666, 222, 123, 1, 2, 3);
         List<Integer> sortedList = sortList.stream()
                 .filter(s -> s != 666)
                 .sorted(Comparator.comparing(o -> o != 123))
                 .collect(toList());
         System.out.println(sortList);
         System.out.println(sortedList);
+    }
+
+    private static void sortDemo() {
+        List<Integer> sortList = Lists.newArrayList(666, 222, 123, 1, 2, 3);
+
+        System.out.println(sortList);
+        sortList = sortList.stream().sorted().collect(toList());
+        System.out.println(sortList);
     }
 }
