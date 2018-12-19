@@ -1,4 +1,4 @@
-package com.arbor.note.juc;
+package com.arbor.note.juc.thread;
 
 import java.util.concurrent.TimeUnit;
 

@@ -74,6 +74,13 @@
                 <version>${spring.version}</version>
             </dependency>
             <!-- end of spring framework -->
+
+            <!-- JavaPoet 动态生成Java源文件 -->
+            <dependency>
+                <groupId>com.squareup</groupId>
+                <artifactId>javapoet</artifactId>
+                <version>1.11.1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
