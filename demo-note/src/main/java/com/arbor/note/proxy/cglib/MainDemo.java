@@ -16,6 +16,7 @@ public class MainDemo {
         enhancer.setCallback(new MyMethodInterceptor());
 
         HelloConcrete helloConcrete = (HelloConcrete) enhancer.create();
+        System.out.println("动态代理生成对象");
 //        helloConcrete.sayHello("cglib nbnbnb!!!");
         System.out.println(helloConcrete.sayHello("cglib nbnbnb!!!"));
     }

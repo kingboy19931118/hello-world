@@ -15,14 +15,16 @@ public class MyMethodInterceptor implements MethodInterceptor {
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
         System.out.println("You said:" + Arrays.toString(objects));
-        System.out.println(o);
+        //  输出此会调用 final toString 方法
+//        System.out.println(o);
         System.out.println(o.getClass());
         System.out.println(method.getName());
         System.out.println(methodProxy.getSuperName());
-        Enhancer enhancer = new Enhancer();
-        enhancer.setSuperclass(HelloConcrete.class);
-        enhancer.setCallback(new MyMethodInterceptor());
-        Object o1 = enhancer.create();
-        return methodProxy.invokeSuper(o1, objects);
+//        Enhancer enhancer = new Enhancer();
+//        enhancer.setSuperclass(HelloConcrete.class);
+//        enhancer.setCallback(new MyMethodInterceptor());
+//        Object o1 = enhancer.create();
+        return methodProxy.invokeSuper(o, objects);
+//        return methodProxy.invoke(o, objects);
     }
 }
