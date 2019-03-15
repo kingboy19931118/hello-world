@@ -68,6 +68,19 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+
+        <!-- Sentinel 限流系统 -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-core</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.akucun</groupId>
+            <artifactId>akucun-common-guid</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
 </project>

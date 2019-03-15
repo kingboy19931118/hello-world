@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 public class Demo {
 
     public static void main(String[] args) {
-        Double d = 1.0 - 0.9;
+        double d = 1.0 - 0.9;
         System.out.println(d);
 
         BigDecimal d2 = BigDecimal.valueOf(1.0).subtract(BigDecimal.valueOf(0.9));
