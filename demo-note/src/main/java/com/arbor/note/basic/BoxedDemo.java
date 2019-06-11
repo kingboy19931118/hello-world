@@ -22,5 +22,27 @@ public class BoxedDemo {
         System.out.println(c.equals((a + b)));//true
         System.out.println(g == (a + b));//false --> true
         System.out.println(g.equals((a + b)));  //true    --》 false
+
+        Father father
+                = new Father();
+        father.test();
     }
+}
+
+class Sun{
+
+    public void test() {
+        System.out.println("sun");
+    }
+}
+
+
+class Father extends Sun {
+
+    @Override
+    public void test() {
+        super.test();
+        System.out.println("father");
+    }
+
 }
