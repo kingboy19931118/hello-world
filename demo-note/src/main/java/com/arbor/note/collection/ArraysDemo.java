@@ -3,6 +3,7 @@ package com.arbor.note.collection;
 import com.alibaba.fastjson.JSON;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentSkipListMap;
 
 /**
  * @author wangqiaomu
@@ -61,5 +62,7 @@ class DemoFunction {
         treeMap.put(2, "b");
         treeMap.put(1, "abcaaa");
         System.out.println(treeMap);
+
+        NavigableMap<Object, Object> navigableMap = new ConcurrentSkipListMap<>();
     }
 }
