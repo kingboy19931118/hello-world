@@ -2,6 +2,7 @@ package com.arbor.note.jvm.classload;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.DriverManager;
 
 public class MyClassLoader {
 
@@ -30,5 +31,10 @@ public class MyClassLoader {
         System.out.println(obj);
         System.out.println(obj instanceof com.arbor.note.jvm.classload.MyClassLoader);
 
+    }
+
+    public Object func() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+        Object o = Class.forName("com.mysql.jdbc.Driver").newInstance();
+        return o;
     }
 }
