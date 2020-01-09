@@ -41,6 +41,15 @@
             <artifactId>spring-context</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>1.5.8.RELEASE</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.3</version>
@@ -76,11 +85,26 @@
             <version>1.4.0</version>
         </dependency>
 
+        <!-- 规则引擎 -->
         <dependency>
-            <groupId>com.akucun</groupId>
-            <artifactId>akucun-common-guid</artifactId>
-            <version>1.0.0</version>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-rules-support</artifactId>
+            <version>3.3.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-rules-core</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-rules-mvel</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+        <!-- end -->
+
     </dependencies>
 
 </project>
