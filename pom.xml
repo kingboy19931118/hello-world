@@ -13,6 +13,7 @@
         <module>demo-web</module>
         <module>demo-service</module>
         <module>demo-infra</module>
+        <module>demo-spring</module>
     </modules>
 
     <properties>
@@ -90,7 +91,7 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>8.0.13</version>
+                <version>8.0.16</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
