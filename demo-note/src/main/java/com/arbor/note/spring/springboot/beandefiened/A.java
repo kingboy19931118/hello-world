@@ -27,16 +27,4 @@ public class A {
     @Autowired
     @Qualifier(value = "b")
     private B b;
-
-    public static void main(String[] args) {
-        DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE;
-        DateTimeFormatter formatter1 =
-                new DateTimeFormatterBuilder().appendPattern("yyyy-MM").parseDefaulting(ChronoField.DAY_OF_MONTH, 1)
-                .toFormatter();
-        LocalDate date = LocalDate.parse("2018-07", formatter1);
-        LocalDate begin = date.with(TemporalAdjusters.firstDayOfMonth());
-        LocalDate end = date.with(TemporalAdjusters.lastDayOfMonth());
-        System.out.println(begin.format(formatter));
-        System.out.println(end.format(formatter));
-    }
 }

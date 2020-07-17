@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @DependsOn(value = {"a","b"})
 @Data(staticConstructor = "")
 @RestController
-@Component("hello1")
+@Component("helloWorldService")
 @Service
 public class HelloWorldService {
 

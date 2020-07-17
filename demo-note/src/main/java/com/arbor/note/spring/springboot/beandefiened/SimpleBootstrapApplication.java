@@ -35,7 +35,7 @@ public class SimpleBootstrapApplication implements CommandLineRunner {
 //	private HelloWorldService helloWorldService;
 
 	@Autowired
-	@Qualifier("hello1")
+	@Qualifier("helloWorldService")
 	private HelloWorldService helloWorldService1;
 
 
