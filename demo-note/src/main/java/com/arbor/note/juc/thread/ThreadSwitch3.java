@@ -4,7 +4,7 @@ package com.arbor.note.juc.thread;
  * @author qiaomu.wang
  * @date 2018-12-24
  */
-public class ThreadSwitch2{
+public class ThreadSwitch3 {
     static class Word {
         String s;
         public Word(String a) {
@@ -19,43 +19,36 @@ public class ThreadSwitch2{
     }
     static final int MAX_TIMES = 10;
     static int i = 0;
-    static Word s = new Word("A");
-    public static void main(String[] args) {
+    static Object obj = new Object();
+//    static Word s = new Word("A");
+    public static void main(String[] args) throws InterruptedException {
         //A线程
         Thread t1 = new Thread(() -> {
             while (i < MAX_TIMES) {
-                synchronized (s) {
-                    if (s.getS().equals("B")) {
+                synchronized (obj) {
                         try {
-                            s.wait();
+                            obj.notify();
+                            System.out.println(Thread.currentThread().getName() + "____t1");
+                            i++;
+                            obj.wait();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                    } else {
-                        System.out.println(Thread.currentThread().getName() + "____" + s.getS());
-                        s.setS("B");
-                        i++;
-                        s.notify();
-                    }
                 }
             }
         });
         //B线程
         Thread t2 = new Thread(() -> {
             while (i < MAX_TIMES) {
-                synchronized (s) {
-                    if (s.getS().equals("A")) {
+                synchronized (obj) {
                         try {
-                            s.wait();
+                            obj.wait();
+                            System.out.println(Thread.currentThread().getName() + "_______t2");
+                            i++;
+                            obj.notify();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                    } else {
-                        System.out.println(Thread.currentThread().getName() + "_______" + s.getS());
-                        s.setS("A");
-                        i++;
-                        s.notify();
-                    }
                 }
             }
         });
