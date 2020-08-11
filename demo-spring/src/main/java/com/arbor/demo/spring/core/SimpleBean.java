@@ -17,7 +17,6 @@ public class SimpleBean {
 
     private Date date;
 
-
     public SimpleBean() {
     }
 

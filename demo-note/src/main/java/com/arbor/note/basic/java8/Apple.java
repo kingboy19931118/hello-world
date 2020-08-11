@@ -1,5 +1,7 @@
 package com.arbor.note.basic.java8;
 
+import java.io.Serializable;
+
 /**
  * com.arbor.note.basic.java8.Apple
  *
@@ -7,7 +9,7 @@ package com.arbor.note.basic.java8;
  * @date 2020-07-31
  * @since v2.0.0
  */
-public class Apple {
+public class Apple implements Serializable {
 
     private Integer weight;
 

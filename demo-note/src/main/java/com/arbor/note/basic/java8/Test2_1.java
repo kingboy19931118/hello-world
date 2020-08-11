@@ -1,7 +1,9 @@
 package com.arbor.note.basic.java8;
 
 import com.google.common.collect.Lists;
+import sun.misc.Unsafe;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +17,11 @@ import java.util.List;
 public class Test2_1 {
 
     public static void main(String[] args) {
+        new ArrayList<Apple>().sort((Apple a1, Apple a2) -> {return a1.getWeight().compareTo(a2.getWeight());});
+
+        Integer.valueOf(1); // IntegerCache
+        short s1 = 1;
+        s1 += 1;
         List<Apple> redApples = filter(Lists.newArrayList(), (Apple app) -> app.getColor().equals("red"));
         List<Integer> evenNumbers = filter(Lists.newArrayList(), (Integer num) -> num % 2 == 0);
     }

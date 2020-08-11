@@ -8,4 +8,6 @@
         <constructor-arg index="1" value="33"/>
         <constructor-arg index="2" type="java.util.Date" value="Thu May 14 20:59:55 CST 2020"/>
     </bean>
+
+    <bean class="com.arbor.demo.spring.core.MFile" id="mFile" scope="singleton" />
 </beans>
