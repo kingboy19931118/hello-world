@@ -10,12 +10,21 @@ public class JoinDemo {
         Join j1 = new Join();
         Join j2 = new Join();
         Join j3 = new Join();
+        System.out.println("main doing1");
         j1.start();
+        System.out.println("main doing11");
+        Thread.sleep(1000L);
         j1.join();
+        System.out.println("main doing2");
         j2.start();
+        System.out.println("main doing22");
         j2.join();
+        System.out.println("main doing3");
         j3.start();
+        System.out.println("main doing33");
         j3.join();
+        System.out.println("main doing4");
+        System.out.println("main doing44");
     }
 
 

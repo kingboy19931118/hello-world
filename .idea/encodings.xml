@@ -4,9 +4,12 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-infra" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-infra/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-note" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-spring" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-spring/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-web/src/main/resources" charset="UTF-8" />
   </component>
 </project>
