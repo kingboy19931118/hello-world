@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * com.arbor.note.basic.memory.EscapeAnalyzeDemo
+ * 逃逸分析， 栈上分配、标量替换、同步消除
  *
  * @author Joem
  * @date 2020-09-03
@@ -18,6 +19,30 @@ public class EscapeAnalyzeDemo {
         private boolean gender;
         private int age = 1;
         private String name;
+        private int a1;
+        private int a2;
+        private int a3;
+        private int a4;
+        private int a5;
+        private int a6;
+        private int a7;
+        private int a8;
+        private int a9;
+        private int a10;
+        private int a11;
+        private int a12;
+        private int a13;
+        private int a14;
+        private int a15;
+        private int a16;
+        private int a17;
+        private int a27;
+        private int a28;
+        private int a29;
+        private int a210;
+        private List<String> str;
+
+
 
         public Persion() {
         }
