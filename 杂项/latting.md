@@ -1,3 +1,7 @@
+# 省心版 justmysocks
+https://justmysocks3.net/members/aff.php?aff=3631
+下单后将ip、password、加密方式等copy到v2ray/ss中即可
+
 # 自建梯子：
 
 
