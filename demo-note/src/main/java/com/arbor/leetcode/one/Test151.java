@@ -20,15 +20,16 @@ public class Test151 {
         if (s == null) {
             return "";
         }
+        s = s.trim();
         String[] arr = s.split(" ");
         if (arr.length == 1) {
             return s.trim();
         }
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < arr.length; i++) {
-
+            System.out.println("str : " + sb);
             String str = arr[arr.length - i - 1];
-            if (str.equals("")) {
+            if ("".equals(str)) {
                 continue;
             }
             sb.append(str);
