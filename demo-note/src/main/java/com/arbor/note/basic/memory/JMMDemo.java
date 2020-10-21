@@ -1,5 +1,8 @@
 package com.arbor.note.basic.memory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * com.arbor.note.basic.memory.JMMDemo
  *
@@ -14,8 +17,9 @@ public class JMMDemo {
     }
 
     public static void main(String[] args) throws InterruptedException {
+        List<Object[]> obj = new ArrayList<>();
         while (true) {
-
+            obj.add(new Object[1024]);
             Thread.sleep(20L);
         }
     }
