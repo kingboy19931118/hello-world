@@ -2,6 +2,8 @@ package com.arbor.note.jvm;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  *  *VM Args：-Xms20m -Xmx20m -XX:+HeapDumpOnOutOfMemoryError
@@ -23,5 +25,16 @@ public class HeapOOM {
         while (true) {
             list.add(new OOMObject());
         }
+
+
+    }
+
+    /**
+     * 过滤空数据及去重
+     * @param data 入参数据
+     * @return 返回值
+     */
+    public List<String> filter(List<String> data) {
+        return data.stream().filter(Objects::nonNull).distinct().collect(Collectors.toList());
     }
 }
