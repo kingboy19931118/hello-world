@@ -21,7 +21,7 @@
         <project.encoding>UTF-8</project.encoding>
         <java.src.version>1.8</java.src.version>
         <java.target.version>1.8</java.target.version>
-        <spring.version>4.3.20.RELEASE</spring.version>
+        <spring.version>5.2.20.RELEASE</spring.version>
 
     </properties>
 
